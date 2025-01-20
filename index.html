@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>B6 لخدمات السيارات</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .main-header {
+            text-align: center;
+            padding: 20px;
+        }
+
+
+
+        .logo {
+            max-width: 400px;
+            box-shadow: 10px 10px 7px rgba(161, 160, 160, 0.699);
+            margin-top: 50px;
+        }
+
+        .gallery {
+            text-align: center;
+            padding: 20px;
+            /* background-color: #f4f4f4; */
+        }
+
+        .gallery h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        /* Swiper styles */
+        .swiper-container {
+            /* width: 100%; */
+            /* margin: auto; */
+            padding: 20px 0;
+            overflow-x: hidden;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 70%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            max-width: 100%;
+
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 10px;
+        }
+
+        body {
+            overflow-x: hidden;
+            /* لإخفاء أي تجاوز عرضي */
+        }
+
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            /* اجعل السلايدر يأخذ عرض الحاوية بالكامل */
+            max-width: 1200px;
+            /* اختيار عرض مناسب للسلايدر */
+            margin: auto;
+            /* مركزة السلايدر */
+            padding: 20px 0;
+        }
+
+        .swiper-pagination {
+            /* position: absolute; */
+            bottom: 10px;
+            /* ضع النقاط أسفل السلايدر */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            /* اجعل النقاط فوق الصور */
+        }
+
+        /* موضع الأسهم */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fffcfc;
+            /* لون الأسهم */
+            position: absolute;
+            top: 50%;
+            /* محاذاة في منتصف السلايدر */
+            transform: translateY(-50%);
+            z-index: 10;
+            font-size: 24px;
+            /* حجم السهم */
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+            /* السهم الأيسر */
+        }
+
+        .swiper-button-next {
+            right: 10px;
+            /* السهم الأيمن */
+        }
+
+        /* موضع النقاط */
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            top: 80%;
+            /* المسافة من أسفل السلايدر */
+            left: 50%;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            /* لضمان أن النقاط تكون في المنتصف */
+        }
+
+        .swiper-pagination-bullet {
+            position: absolute;
+            background: #333;
+            /* لون النقاط */
+            opacity: 0.8;
+            /* شفافية خفيفة */
+        }
+
+        .swiper-pagination-bullet-active {
+            position: absolute;
+            background: #d3bb59;
+            /* لون النقطة النشطة */
+            opacity: 1;
+            /* تجعل النقطة النشطة أكثر وضوحاً */
+        }
+
+        #floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #floating-whatsapp i {
+            font-size: 30px;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        #contact-us img {
+            transition: transform 0.2s;
+        }
+
+        #contact-us img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sizing">
+        <header class="main-header">
+            <div class="container text-center" style="color: white;">
+                <img src="assets/logo.png" alt="شعار شركة B6" class="logo">
+                <h1>شركة B6 لخدمات السيارات</h1>
+                <div style="text-align: center;">
+                    <!-- <p style="color: white; padding: 0 100px; font-size: 30px; line-height: 40px;"> -->
+                        <p class="main-style">
+                        متخصصون في التعامل مع جميع أنواع الصدمات وإعادة السيارات لحالتها الأصلية.
+                        شركة B6 لخدمات السيارات تقدم خدمات متميزة في إصلاح الصدمات وإعادة السيارات إلى حالتها الأصلية
+                        باستخدام أحدث
+                        التقنيات. نضمن الجودة والدقة مع فريق متخصص يلبي جميع احتياجات سيارتك. رضاك هو هدفنا!
+                    </p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- معرض الصور -->
+            <section class="gallery">
+                <h2 style="color: white;">خدماتنا</h2>
+                <!-- Swiper Container -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/before1.jpeg" alt="قبل الصيانة">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/after1.jpeg" alt="بعد الصيانة">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/before2.jpeg" alt="قبل الصيانة">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/after2.jpeg" alt="بعد الصيانة">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/before3.jpg" alt="قبل الصيانة">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/after3.jpeg" alt="بعد الصيانة">
+                        </div>
+                    </div>
+                    <!-- Pagination and Navigation -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+        </main>
+
+
+    </div>
+    <section class="branches" ">
+        <h2>فروعنا</h2>
+        <ul class=" grid-container" style="display: flex; justify-content: space-between;  padding-left: 10%;
+  padding-right: 10%; flex-wrap: wrap; gap: 30px;">
+
+
+
+        <li class="center branch">
+            <h3 class="circle ">1</h3>
+            <h3>
+                الرياض
+            </h3>
+            <p>طريق الدمام - حي المونسية - خلف مقهى الشلال</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">2</h3>
+            <h3>
+                مكة المكرمة
+            </h3>
+            <p>طريق المدينة مكة المكرمة - حي النوارية بعد دانكن</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">3</h3>
+            <h3>
+                المدينة المنورة
+            </h3>
+            <p>الدعيثة - مقابل الاتصالات السعودية</p>
+
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">4</h3>
+            <h3>
+                جدة
+            </h3>
+            <p>معارض السيارات بجوار تقديرات شيخ المعارض </p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">5</h3>
+            <h3>
+                الدمام
+            </h3>
+            <p>محطة العسكر طريق أبو حدرية - حي المنار</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">6</h3>
+            <h3>
+                جيزان
+            </h3>
+            <p>شارع المطلع - حي الروضة - مقابل كبري التوحيد - بعد مطعم ركن جدة</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">7</h3>
+            <h3>
+                تبوك
+            </h3>
+            <p>طريق الأمير فهد بن سلطان محطة المنشية مقابل الهلال الأحمر حي سلطانة</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">8</h3>
+            <h3>
+                خميس مشيط
+            </h3>
+            <p>حــي العزيزية طريق الملك عبد الله</p>
+        </li>
+        <li class="center branch">
+            <h3 class="circle ">9</h3>
+            <h3>
+                حائل
+            </h3>
+            <p>حي العزيزية شارع الملك فيصل بجوار مستشفى الأنوار</p>
+        </li>
+
+        </ul>
+    </section>
+    <section id="contact-us" style="text-align: center; padding: 20px; padding-top: 100px; background-color: #f5f5f5;">
+        <h2 style="margin-bottom: 20px;">تواصل معنا</h2>
+        <div style="display: flex; justify-content: space-around;">
+            <!-- Snapchat Section -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 20px;">Snapchat</h3>
+                <div id="snapchat-qr"></div>
+            </div>
+
+            <!-- Instagram Section -->
+            <div style="margin-bottom: 20px; ">
+                <h3 style="margin-bottom: 20px;">Instagram</h3>
+                <div id="instagram-qr"></div>
+            </div>
+        </div>
+        <!-- WhatsApp Section -->
+        <!-- <div style="margin-bottom: 20px;">
+              <h3>WhatsApp</h3>
+              <div id="whatsapp-qr"></div>
+              <p>+966 55 729 9949</p>
+            </div> -->
+    </section>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/966557299949" style="text-decoration: none;" target="_blank" id="floating-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+
+    <footer class="d-flex justify-content-center">
+        <a href="https://soloidea.sa/" style="text-decoration:none; color:rgb(216, 180, 20);"> Soloidea.sa &nbsp; </a> <p>- 2024 Copyright © Soloidea </p>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Font Awesome Link -->
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Generate QR Codes
+        new QRCode(document.getElementById("snapchat-qr"), {
+            text: "https://www.snapchat.com/add/b6.car?share_id=zhPfWxfzQ4c&locale=ar-AE",
+            width: 150,
+            height: 150
+        });
+
+        new QRCode(document.getElementById("instagram-qr"), {
+            text: "https://www.instagram.com/b6.car/",
+            width: 150,
+            height: 150
+        });
+
+        new QRCode(document.getElementById("whatsapp-qr"), {
+            text: "https://wa.me/966557299949",
+            width: 150,
+            height: 150
+        });
+    </script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true, // Loop through slides
+            spaceBetween: 0, // Space between slides
+            slidesPerView: 2,
+            slidesPerGroup: 2, // Number of slides visible
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // autoplay: {
+            //     delay: 3000, // Slide delay in milliseconds
+            //     disableOnInteraction: false,
+            // },
+        });
+    </script>
+</body>
+
+</html>
